@@ -1,3 +1,5 @@
+Ben Jacobson 2004-2008
+
 This is a collection of Java Applet games that I had built during the later part of high school. 
 
 At the time I figured it would be worth learning Java in order to get learn a bit about web and mobile app development. Thankfully these days we have much better platforms for this sort of thing. I know Flash was a big thing at the time, but for some reason I wasn’t able to get my head around the workflows of it. Or maybe I lacked the patience. 
