@@ -1,0 +1,102 @@
+sokoban
+-------- 
+java applet game
+320x240 applet
+
+gameplay:
+player pushes boulders into holes to create diamonds
+turn all boulders into diamonds to complete level.
+player must get into contact with diamond to clear hole for more boulders to be converted
+the player must complete the level without exceeding the maximum moves
+5 levels, each go into harder difficulty as they go.
+a status bar will be at the bottom giving stats such as level name, level number,
+boulders left and total + max moves. a window will pop-up to say that you have completed the level
+or you have exceeded your maximum moves causing you to restart the level.
+
+grid system portrays levels, see sokobanGUI.gif for layout
+top section is game area, bottom section GUI with level name and counter
+with 16x16 tiles
+
+levels are 20x12
+
+00000000000000000000
+01111111100000000000
+01324225100000000000
+01222222100000000000
+01111111100000000000
+00000000000000000000
+00000000000000000000
+00000000000000000000
+00000000000000000000
+00000000000000000000
+00000000000000000000
+00000000000000000000
+
+0 = black square
+1 = brick wall
+2 = concrete floor
+3 = player start position
+4 = boulder
+5 = hole (convert boulder)
+
+max boulders = 16
+
+collision detection:
+boulder cannot be pushed into another boulder or a wall
+player cannot move further into wall or two boulders in line
+
+   * player returns x,y and is put into canmove function inside levelHandler, if true player moves
+   * player returns x,y and is put into canmove function inside boulderHandler but first gives x,y's to levelHandler class, if no wall or boulder 
+     in next square, the player and it moves.
+     
+        sample code: just for one direction, up;
+           
+	   keyisup()
+	   {
+           int boulderIndex = boulderHandler.boulderCanMove(player.x, player.y, direction);    // checks player x,y with nearby boulders in direction 											                      //returns -1, if next position is another boulder     
+           
+           		if (boulderIndex != -1 &&  // this checks if boulders can move
+                            levelhandler.canmoveBoulder(boulderHandler.boulder[boulderIndex].x, boulderHandler.boulder[boulderIndex].y, direction) == true)
+           		{
+            		        player.move(direction);
+				boulderHandler.move(boulderIndex, direction);
+           		}
+			if ()
+			{
+
+			}
+				  
+	   }
+
+class layouts: (other than main class file)
+
+gui
+player
+boulder
+boulderHandler
+level
+levelHandler
+
+class information.
+
+gui class:
+responsible for drawing and updating the status window, GUI is also responsible for displaying any messages in message windows
+gui has level name, gems collected/how many left, moves/left
+
+player class:
+responsible for drawing and updating player positions, returns X,Y so that levelHandler and boulderHandler can check collision
+
+boulder:
+these are individual boulders with their x,y positions, drawing them
+
+boulderHandler:
+a class for managing the individual boulders, this also moves them around as the player moves. updating the said boulders x and y. takes player x,y to check collision for boulders. returns x,y's for level handler to check collision
+
+level:
+a class holding the map information, its name and the total moves
+
+levelHandler:
+level handler draws the map under the gui. it has an array of 'level' and strips everything not a wall or floor. this will have a function to
+return data such as player start X,Y's for player positioning, and individual boulders. plus a check X,Y function for colision detection. takes 
+data from player classe to handle collision from brick walls. takes data from boulder handler to check boulder collison with walls.
+

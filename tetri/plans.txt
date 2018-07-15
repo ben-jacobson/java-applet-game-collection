@@ -1,0 +1,38 @@
+plans for tetri
+
+game of tetris. sized 400(w)x500(h) sized applet
+
+classes:
+
+GUI : handles gui, main positions of gui, responsible for drawing the main screen, showing score, showing level
+score : responsible for score, level number. calculates how fast a block will move with the level number.
+blockMatrix : responsible for keeping data on which blocks are on the screen, keeping the graphics for the blocks in data,
+	drawing the blocks on the screen, will also have functions for retrieving block rotation peice, functions for 
+	collision  detection, will handle victory, block lines and loss conditions, handles nextBlock, randomizing + drawing. 
+block : keeps the block combinations in small arrays. blockMatrix will have his own copy of this class inside as a variable
+	contains the 4 different combinations of blocks with their respective rotated piece.
+
+notes:
+
+:the level number will only determine the speed of how fast the blocks will fall. 5 will be enough, after that you have won.
+:the block array in class:blockMatrix will be numbered 0 (none/blank) and 1-4 (4 different colours of blocks) and 
+ 4-8 (same colour) but not moving. so; 0 = none, 1-4 = colour moving, 5-9 = colour not moving. when blocks have stopped moving
+ add 4 to the combination array in the blockMatrix. 
+:block combinations will be small array containing the shape of the peice.
+:colours of blocks will be randomized everytime new blocks enter the screen.
+:a line will give you 100 points
+:victory (one level) will be 5000 points (thats 50 lines broken)
+:speed is calculate: s=m-l/4. s=speed, m=max levels, l=current level. example speed = 5-1 / 4 = 1 second to wait, 5-3/4 = 0.5 seconds to wait
+
+to be finished by 27/8/04 (2 week project)
+
+left to do (15/8/04): (* = done)
+	multiple pieces (not just one) *
+	fall piece functions. *
+	a rotate function *
+	nextBlock. *
+	won + lost screens.* // the last thing to do. this is considered polish
+
+testing needs doing with the new rotate peice function*
+
+finished 16/8/04 (11 days early)

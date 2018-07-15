@@ -1,0 +1,105 @@
+JetMan proposal/plans
+
+arcade style game where the player must use his jetpack and jumping skills to avoid aliens and collect
+parts to fix his space ship. The player will go through levels of spaceship internal, external, alien
+landscape and into an alien colony. each level has a series of parts with one unique part each level.
+each level will be puzzling and entertaining
+
+story:
+jetman is flying around space trying to get home. he is shot down by a bunch of gangros on 
+a planet. he crashes and loses all his parts. he must find all the parts, avoid enemies and repair his 
+ship to head back to earth.
+
+the player:
+jetman. has a jetpack and anti-grav boots. can jump two squares up.
+
+the enemies: 
+1. Arachno: an alien that looks like a spider with claws. try to avoid this one, he will poison you.
+2. WingHerd: an alien bird looking thing. flys around. taken down in 2 shots.
+3. Phillis: 2 legged beast, will eat you. taken down in two shots.
+4. Gangro: weird looking turret thing. stays still and shoots plasma at you.
+5. Cyba: the ultimate and hard to fight enemy. takes 10 laser shots to kill. lucky these are rare.
+   these will shoot you when they see you.
+
+items:
+1. part. different parts that have to be collected. randomized each time. In each level there will be a
+   unique and important part to collect. there will be 5 randomized parts and 5 unique parts.
+2. fuel. for the jetpack if there is no more fuel. the player cannot fly
+3. extra life.
+4. laser gun. for shooting aliens.
+
+levels:
+1. inside space ship.
+2. outside space ship.
+3. alien landscape.
+4. alien colony.
+5. final alien colony.
+
+notes:
+*each level will be differentiated by its level background and tileset.
+*each level will have a different amount of parts, depending how hard the level is.
+*when the player finishes. he jumps up and down then the level is complete.
+*the applet will be 500x500
+*squares will be 25x25. leaving level size to be 20x20 arrays (preferably text files)
+*There will be ladders, floor and walls.
+
+creation:
+
+classes.
+player : handles player x,y. hasGun, fuel level, drawing, xspeed, yspeed, collision detection with blocks + enemies, 
+         handle function. handles animation of graphic.
+enemy : base class for enemies. x, y pos, hp, graphics, drawing, handle function. handles animation 
+        of graphic. behavoural type. (flying, turret, moving, shooting. ect)
+gui : hold graphics + game states. draws them + holds variables for tx,ty ect of playing field.
+score : holds score level, lives left, items gotten, draws these.
+level : holds the layout for the current level, the handle function (main handle function), drawing function,
+        map array. 
+levels : class for holding the map layouts for all 5 maps. holds waypoint arrays for all maps + enemy array
+waypoint : basic waypoint class, with an x, y and id number.
+item : base class for all items that can be acquired. its graphics, type of item, x, y pos
+
+graphics:
+2 frames (left/right) player still + 2 frames walking either way, + 3 frames flying left, right, neutral (6) + dying image 2 frames either way (4) /
+Arachno 2 frames walking either way (4) /
+wingHerd 2 frames either way flying (4) /
+Phillis 2 frames either way walking (4) /
+Gangro 2 frames either way still (2) /
+Cyber 2 frames walking either way (4) /
+
+random parts (5) /
+unique parts (5) /
+fuel canister / 
+laser gun /
+
+plasma blob + laser ray (2) / (laser ray g.line) /
+
+4 diff types of tiles 25x25 (4) /
+
+all sprite images cant be bigger than 25x25
+
+intro screen, / 
+background images (5) /
+hud /
+game over screen / 
+credits screen /
+
+tests to be run before dev:
+*inheritance/
+*animated gifs + controlling and animating gifs. /
+*study keyUp method see what it does. /
+
+design cycle:
+planning /
+graphics (placeholders) /
+programming /
+testing /
+graphics (final) /
+further bug testing. (changed collision) /
+shipping
+
+to be finished by 29/9/04 + 1 week (second holiday week) for graphics + level design. due term 4 start
+*finished 26/9/04 (3 days before scheduler + didnt use extra week) hooray!
+
+things to be added.
+when the level ends. a teleporter appears in a startin space space /
+jumping /

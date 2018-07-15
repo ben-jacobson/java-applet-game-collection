@@ -1,0 +1,42 @@
+Tetri II
+500x500 java applet
+by Ben Jacobson
+---------------
+basic tetris game, sequal to the first game
+more parts, more colours however
+less buggy, more enjoyable
+
+blocks smoothly move down, speed up literally speeds it up doesnt just fall
+
+basic splash screen.
+game gui with info such as level, score, next level up, next block.
+
+colour scheme:
+really light blue, black
+
+classes:
+block - current block and its matrix, holds all coloured block images. draws it. next block, draws it
+blockMatrix - holds the matrix for the gamescreen. holds all block prototypes. draws it. owns personal block class
+gui - draws info, blocks on screen and gamescreen,splash screen and gui. holds states. holds scores
+
+stepwise design:
+1. planning /
+2. graphics /
+3. programming
+4. finalisation
+
+specs:
+blocks 20x20
+array 14x24
+
+border 10,10 - 290,490. the remaining space for info
+280x480 play window
+
+different types of blocks:
+*    *  **  ***  **    **  *
+*    *  **   *    **  **   * 
+**  **                     *
+                           *
+
+javascript written in html file 2 cache images 1st. experimental, but could create a loading effect
+and a status line saying that the applet is loading until all images are cached

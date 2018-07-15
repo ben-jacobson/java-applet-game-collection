@@ -1,0 +1,44 @@
+JBall. (Java Ball)
+
+a small applet (400x400).
+basic bananoid game with assorted powerups
+
+classes:
+
+ball : the ball on the screen handle function, calculated position returns
+paddle : the paddle with collision detection with the ball. also with powerups
+score : score/level/lives left. manipulations,  
+bricks : the blocks on the screen, their collision detection with the ball. handle function. block images
+gui : gui functions with drawing capabilities. also handles title and credits screen
+powerups : draws the 5 different powerups. array of powerups, handler for powerups.
+levels : level layout.
+
+notes:
+*the ball will use pythag therom for proper collision detection using a vector.
+*the paddle and bricks will use regular bound box detection (with 3 hotspots on the paddle)
+*hitting a block will award 10 points.
+*the brickArray will consist of 6 different coloured blocks, powerups are randomized
+*the 5 different powerups include: a cannon, golden ball (no bounce off blocks), an extra life, 
+ an earthquake and ball speed up.
+*each powerup will have its icon
+*there will be 5 levels each with a particular level layout made up of bricks.
+*a title screen, a main screen(gui) and a credits screen. each level will 
+ have its corresponding background image
+
+finish by (standard amount of time 2 weeks) 1/9/04
+
+steps.
+1.planning *
+2.graphics *
+3.coding *
+4.testing + improvement *
+5.shipping
+
+final improvement list:
+*game over screen. /
+*fixed up powerup Tablets /
+*added gold ball + gun paddle /
+*fix block borders images /
+*fix name text on gui /
+
+finished 22/08/04
